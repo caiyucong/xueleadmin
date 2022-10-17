@@ -56,5 +56,12 @@ export default {
       url: `/eduservice/course/${id}`,
       method: 'DELETE'
     })
+  },
+  // 查询课程所有信息
+  getCourseList() {
+    return request({
+      url: '/eduservice/course/findAll',
+      method: 'get'
+    })
   }
 }

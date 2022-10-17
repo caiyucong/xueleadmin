@@ -24,12 +24,22 @@ import sta from '@/api/edu/sta'
 export default {
   data() {
     return {
-      day: ''
+      day: '',
+      btnDisabled: false
     }
   },
   methods: {
-    create() {
-      sta.create(this.day)
+    async create() {
+      const { success: res } = await sta.create(this.day)
+      if (res) {
+        // 提示信息
+        this.$message({
+          type: 'success',
+          message: '生成数据成功!'
+        })
+        // 跳转到图表显示页面
+        this.$router.push({ path: '/sta/show' })
+      }
     }
   }
 }
