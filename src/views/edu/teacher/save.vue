@@ -101,6 +101,7 @@ export default {
             const { success: success } = await teacher.saveTeacher(this.form)
             if (success) {
               this.$message.success('添加成功！')
+              this.$router.push({ path: `/teacher/list/` })
             } else {
               this.$message.error('添加失败！')
             }
@@ -108,6 +109,7 @@ export default {
             const { success: success } = await teacher.updateTeacher(this.form)
             if (success) {
               this.$message.success('修改成功！')
+              this.$router.push({ path: `/teacher/list/` })
             } else {
               this.$message.error('修改失败！')
             }

@@ -165,6 +165,29 @@ export const asyncRoutes = [
     ]
   },
 
+  // 订单列表
+  {
+    path: '/order',
+    component: Layout,
+    redirect: 'order/list',
+    name: '订单管理',
+    meta: { title: '订单管理', icon: 'form' },
+    children: [
+      {
+        path: 'list',
+        name: 'OrderList',
+        component: () => import('@/views/edu/order/list'),
+        meta: { title: '未支付' }
+      },
+      {
+        path: 'paylist',
+        name: 'OrderPayList',
+        component: () => import('@/views/edu/order/paylist'),
+        meta: { title: '已支付' }
+      }
+    ]
+  },
+
   {
     path: '/acl',
     component: Layout,

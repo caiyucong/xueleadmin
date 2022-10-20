@@ -57,7 +57,7 @@ export default {
     },
     uploadSuccess() {
       this.$message.success('上传成功！')
-      this.$router.push({ path: '/subject/table' })
+      this.$router.push({ path: '/edu/subject/list' })
     }
   }
 }

@@ -84,7 +84,7 @@ export default {
           message: '发布成功',
           type: 'success'
         })
-        this.$router.push({ path: `/course/` })
+        this.$router.push({ path: `/course/list/` })
       } else {
         this.$Message.error({
           content: '发布失败',
